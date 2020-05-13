@@ -15,6 +15,7 @@ def main():
     file_out = open(path_out, "w+")
     counter, condition, increment = '', '', ''
     num_of_for = 0
+    list_of_inc = []
     read_str = file_in.readline()
 
     # X1
@@ -40,7 +41,8 @@ def main():
             counter, condition, increment = read_cycle_start(read_str)
             read_str = tab_str + counter + ";\n" + tab_str + "while({})".format(condition) + "{\n"
             num_of_for += 1
-
+            list_of_inc.insert(0, increment)
+            
             condition_str = "X2"
             output_str = "Y3"
 
@@ -54,7 +56,7 @@ def main():
             if "}" in read_str:
                 # Y5
                 num_of_for -= 1
-                read_str = tab_str + increment + ";" + "\n" + "\t" * num_of_for + "}\n"
+                read_str = tab_str + list_of_inc[0] + ";" + "\n" + "\t" * num_of_for + "}\n"
 
                 condition_str = "!X2X3"
                 output_str = "Y5"
