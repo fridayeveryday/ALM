@@ -1,0 +1,11 @@
+for(int count = 10; i > 0; --i){
+	cout>>i;
+	cout>>i+5;
+	for(int j = 0; j < N; j++){
+		cout>>"Hi";
+		for(int f = -5; f < 0; f++){		
+			someFunction();
+		}
+		cout >> "peace";
+	}
+}
